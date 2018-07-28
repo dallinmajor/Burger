@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="eat-da-burger">
+        <img class="center" src="../../public/assets/images/theBurger.png" alt="">
+        <h4 class="text-center" style="margin-bottom: 30px;">Eat-dah-burger</h4>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            {{#each ready_burgers}}
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="burger burgerRow center">{{id}}.{{burger_name}}</div>
+                </div>
+                <div class="col-lg-6">
+                    <button id="burgerBtn" class="center burgerRow" data-id="{{id}}">Devour?!</button>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        <div class="col-lg-6">
+            {{#each eaten_burgers}}
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="eaten">{{burger}}</div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+
+    <form>
+        <input class="center" type="text">
+    </form>
+    <button id="submit-btn" class="center btn btn-success" type="submit">Submit</button>
+</div>
