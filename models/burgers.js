@@ -13,9 +13,8 @@ module.exports = {
         } )
     },
 
-    eatABurger(id, cb) {
-        orm.updateOne(id, true, function(res) {
-            cb(res);
-        })
+    eatABurger(id) {
+        var id_num = parseInt(id);
+        orm.updateOne("burgers",id_num, true)
     }
 }

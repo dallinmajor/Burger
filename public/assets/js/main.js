@@ -1,5 +1,5 @@
-$(document).ready(function() {
-    $("#submit-btn").on("click", function() {
+$(document).ready(function () {
+    $("#submit-btn").on("click", function () {
         var newBurger = {
             burgerName: $("#newBurger").val().trim()
         }
@@ -8,22 +8,22 @@ $(document).ready(function() {
             type: "POST",
             data: newBurger
         }).then(
-            function() {
+            function () {
                 location.reload();
             }
         )
     })
 
-    $("#burgerBtn").on("click", function() {
-        var id = $(this).attr("data-id");
+    $(".myBurgers #burgerBtn").on("click", function () {
 
-        var burgerId = {
-            id: id
+        var holdId = {
+            id: $(this).attr("data-id")
         }
+
         $.ajax("/api/burgers", {
             type: "PUT",
-            data: burgerId
-        }).then(function() {
+            data: holdId,
+        }).then(function () {
             location.reload();
         })
     })

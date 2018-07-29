@@ -1,34 +1,39 @@
 <div class="container">
     <div class="eat-da-burger">
-        <img class="center" src="../../public/assets/images/theBurger.png" alt="">
+        <img class="center" src="/assets/images/theBurger.png" alt="">
         <h4 class="text-center" style="margin-bottom: 30px;">Eat-dah-burger</h4>
     </div>
     <div class="row">
-        <div class="col-lg-6">
-            {{#each ready_burgers}}
+        <div class="col-lg-6 myBurgers">
+            {{#each burgers}}
+                {{#unless devoured}}
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-8">
                     <div class="burger burgerRow center">{{id}}.{{burger_name}}</div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                     <button id="burgerBtn" class="center burgerRow" data-id="{{id}}">Devour?!</button>
                 </div>
             </div>
+                {{/unless}}
             {{/each}}
         </div>
         <div class="col-lg-6">
-            {{#each eaten_burgers}}
+            {{#each burgers}}
+                {{#if devoured}}
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="eaten">{{burger}}</div>
+                    <div class="eaten">{{burger_name}}</div>
                 </div>
             </div>
+                {{/if}}
             {{/each}}
         </div>
     </div>
-
+    <br><br>
     <form>
-        <input class="center" type="text">
+        <input id="newBurger" class="center" type="text">
     </form>
+    <br>
     <button id="submit-btn" class="center btn btn-success" type="submit">Submit</button>
 </div>
