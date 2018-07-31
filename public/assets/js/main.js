@@ -24,6 +24,7 @@ $(document).ready(function () {
             type: "PUT",
             data: holdId,
         }).then(function () {
+
             location.reload();
         })
     })

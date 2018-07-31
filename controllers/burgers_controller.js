@@ -20,7 +20,9 @@ router.post("/api/burgers", function(req, res) {
 });
 
 router.put("/api/burgers", function(req, res) {
-    burgers.eatABurger(req.body.id)
+    burgers.eatABurger(req.body.id, function(result) {
+        res.json(result)
+    })
 })
 
 module.exports = router;
