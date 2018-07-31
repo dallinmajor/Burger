@@ -4,8 +4,8 @@ module.exports = {
 
     selectAll(table, cb) {
         var query = `SELECT * FROM ${table}`;
-        connection.query(query, function(err, res) {
-            console.log("this was hit")
+        connection.query(query, function (err, res) {
+
             if (err) throw (err);
             cb(res);
         })
@@ -13,7 +13,7 @@ module.exports = {
 
     insertOne(table, cols, vals, cb) {
         var query = `INSERT INTO ${table} (${cols}) VALUES ("${vals}");`
-        connection.query(query,function(err, res) {
+        connection.query(query, function (err, res) {
             if (err) throw (err);
             console.log("add a burger");
             cb(res);
@@ -22,7 +22,7 @@ module.exports = {
 
     updateOne(table, id, cb) {
         var query = `UPDATE ${table} SET devoured=true  WHERE id=${id}`;
-        connection.query(query, function(err, res) {
+        connection.query(query, function (err, res) {
             if (err) throw (err);
             console.log("Burger Devoured!")
             cb(res);
